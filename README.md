@@ -1,12 +1,109 @@
-# React + Vite
+# Codonn 2.0 🌐⚛️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React + Vite application powered by **Firebase**, **React Router**, and **React Toastify**. This is the second iteration of Codonn, redesigned for speed, scalability, and clean modular architecture.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🔥 Firebase Authentication & Realtime Services  
+- ⚛️ React 19 + React Router v7  
+- 💬 Toast notifications via React Toastify  
+- ⚡ Fast bundling with Vite  
+- ✨ Clean component-based architecture  
+- ✅ ESLint for code quality
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+| Tech          | Purpose                        |
+|---------------|--------------------------------|
+| React 19      | Frontend UI                    |
+| Vite          | Dev server & bundler           |
+| Firebase      | Auth & backend services        |
+| React Router  | Routing between pages          |
+| Toastify      | Notifications                  |
+| ESLint        | Code linting                   |
+
+---
+
+## 📦 Installation
+
+Clone the repository and install dependencies:
+
+git clone https://github.com/Donuts-procodes/Codonn2.0.git  
+cd Codonn2.0  
+npm install
+
+---
+
+## 🔧 Scripts
+
+Start the development server:
+
+npm run dev
+
+Build for production:
+
+npm run build
+
+Preview the production build:
+
+npm run preview
+
+Run linting:
+
+npm run lint
+
+---
+
+## 🔐 Firebase Setup
+
+1. Go to [Firebase Console](https://console.firebase.google.com/)  
+2. Create a new Firebase project  
+3. Enable Authentication and Firestore (if needed)  
+4. Add your Firebase config to your React app (e.g., in a `firebase.js` or `.env` file)
+
+---
+
+## 📁 Project Structure (Example)
+
+codonn2.0/  
+├── public/  
+├── src/  
+│   ├── components/  
+│   ├── pages/  
+│   ├── firebase/  
+│   └── App.jsx  
+├── index.html  
+├── package.json  
+└── vite.config.js
+
+---
+
+## ✨ Future Ideas
+
+- Dark mode toggle  
+- User profile dashboard  
+- Firebase Firestore integration  
+- Custom loader and animations
+
+---
+
+## 📄 License
+
+This project is under the **MIT License**. Free to use and modify!
+
+---
+
+## 🔗 Links
+
+- [Live Demo](#) <!-- Add your deployed link -->
+- [Firebase Docs](https://firebase.google.com/docs)
+- [React Router](https://reactrouter.com/)
+- [React Toastify](https://fkhadra.github.io/react-toastify/introduction)
+
+---
+
+💡 *Built with ❤️ by [Donuts-procodes](https://github.com/Donuts-procodes)*
