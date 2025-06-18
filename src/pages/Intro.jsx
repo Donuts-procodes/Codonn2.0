@@ -1,17 +1,28 @@
-import { Link } from "react-router-dom";
 import "./Intro.css";
 import TopNav from "../components/TopNav";
+import { auth, provider } from "../firebase"; // adjust path if needed
+import { signInWithPopup } from "firebase/auth";
+import { Link, useNavigate } from "react-router-dom";
 export default function Intro() {
+  const navigate = useNavigate();
 
+  const handleGoogleLogin = async () => {
+    try {
+      await signInWithPopup(auth, provider);
+      navigate("/home");
+    } catch (error) {
+      alert("Google login failed: " + error.message);
+    }
+  };
   return (
     <>
-    <TopNav/>
+      <TopNav />
       <h2>Codonn v2.0</h2>
       <div className="container">
         <Link to="/login">
-        <button class="btn" >
-          <span>Start Coding</span>
-        </button>
+          <button class="btn">
+            <span>Start Coding</span>
+          </button>
         </Link>
 
         <div className="or">
@@ -19,7 +30,7 @@ export default function Intro() {
           <p>or</p>
           <span className="line"></span>
         </div>
-        <button class="button">
+        <button class="button" onClick={handleGoogleLogin}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             preserveAspectRatio="xMidYMid"
