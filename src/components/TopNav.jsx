@@ -4,10 +4,15 @@ import "./Topnav.css";
 export default function TopNav() {
   return (
     <div className="nav">
-      <button>What's new</button>
-      <button>Home</button>
-      <button>About us</button>
-      <button>More info</button>
+      <Link to='/latest'>
+        <button className="btn-login">What's new</button>
+      </Link>
+      <Link to='/about'>
+        <button className="btn-login">About us</button>
+      </Link>
+      <Link to='/more'>
+        <button className="btn-login">More info</button>
+      </Link>
       <div className="nav-child">
         <Link to="/login">
           <button className="btn-login">LogIn</button>

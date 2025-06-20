@@ -1,0 +1,18 @@
+.card {
+	width: 20%;
+	background: linear-gradient(#111, #111) padding-box,
+		linear-gradient(145deg, transparent 35%, #fc0987, #0ce39a, #69007f) border-box;
+	border: 5px solid transparent;
+	padding: 2rem 0.5rem;
+	font-size: 14px;
+	font-family: inherit;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	border-radius: 16px;
+	background-size: 200% 100%;
+	animation: gradient 5s ease infinite;
+	justify-content: center;
+	align-items: center;
+}

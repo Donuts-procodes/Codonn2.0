@@ -16,6 +16,9 @@ import Register from "./pages/Register";
 import Home from "./pages/Home";
 import Loader from "./components/Loader"; // 🠒 You must create this component
 import { auth } from "./firebase"; // 🠒 Ensure firebase is configured and exported from this file
+import More from './pages/More';
+import About from './pages/About';
+import Latest from './pages/Latest';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -69,8 +72,12 @@ function App() {
           element={
             user ? <Home handleLogout={handleLogout} /> : <Navigate to="/" />
           }
-        />
+          />
+          <Route path="/more" element={<More/>}/>
+        <Route path="/about" element={<About/>}/>
+        <Route path="/latest" element={<Latest/>}/>
       </Routes>
+      
 
       <ToastContainer
         position="top-center"

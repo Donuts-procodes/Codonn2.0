@@ -1,4 +1,5 @@
 import "./Sidebar.css";
+import LogoutButton from "./LogoutButton";
 export default function SideBar() {
   return (
     <>
@@ -8,6 +9,7 @@ export default function SideBar() {
         </div>
         <div className="sidebar-main">MAIN</div>
         <div className="sidebar-footer">
+          <LogoutButton />
         </div>
       </div>
     </>
