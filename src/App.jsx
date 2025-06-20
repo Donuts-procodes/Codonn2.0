@@ -14,11 +14,12 @@ import Intro from "./pages/Intro";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Home from "./pages/Home";
-import Loader from "./components/Loader"; // 🠒 You must create this component
-import { auth } from "./firebase"; // 🠒 Ensure firebase is configured and exported from this file
-import More from './pages/More';
-import About from './pages/About';
-import Latest from './pages/Latest';
+import More from "./pages/More";
+import About from "./pages/About";
+import Latest from "./pages/Latest";
+import Loader from "./components/Loader"; // Make sure this exists
+import { auth } from "./firebase"; // Make sure Firebase is initialized correctly
+import Workspace from "./pages/Workspace"; // ✅ Import at the top
 
 function App() {
   const [user, setUser] = useState(null);
@@ -33,6 +34,15 @@ function App() {
     return () => unsubscribe();
   }, []);
 
+  const handleLogout = async () => {
+    try {
+      await auth.signOut();
+      setUser(null);
+    } catch (error) {
+      console.error("Error logging out:", error.message);
+    }
+  };
+
   if (loading) {
     return (
       <div
@@ -44,23 +54,11 @@ function App() {
     );
   }
 
-  const handleLogout = async () => {
-    try {
-      await auth.signOut();
-      setUser(null);
-    } catch (error) {
-      console.error("Error logging out:", error.message);
-    }
-  };
-
   return (
     <Router>
       <Routes>
-        {/* Redirect to home if logged in, else show Intro */}
-        <Route
-          path="/"
-          element={user ? <Navigate to="/home" /> : <Intro />}
-        />
+        {/* Redirect to /home if user is logged in, else show Intro */}
+        <Route path="/" element={user ? <Navigate to="/home" /> : <Intro />} />
 
         {/* Public routes */}
         <Route path="/login" element={<Login />} />
@@ -72,12 +70,17 @@ function App() {
           element={
             user ? <Home handleLogout={handleLogout} /> : <Navigate to="/" />
           }
-          />
-          <Route path="/more" element={<More/>}/>
-        <Route path="/about" element={<About/>}/>
-        <Route path="/latest" element={<Latest/>}/>
+        />
+        <Route
+          path="/workspace"
+          element={user ? <Workspace /> : <Navigate to="/" />}
+        />
+
+        {/* Additional routes - accessible by anyone for now */}
+        <Route path="/more" element={<More />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/latest" element={<Latest />} />
       </Routes>
-      
 
       <ToastContainer
         position="top-center"
