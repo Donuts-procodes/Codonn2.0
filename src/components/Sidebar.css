@@ -18,7 +18,6 @@
 .sidebar-head {
 	display: flex;
 	width: 100%;
-	border-bottom: 1px solid #fff;
 	height: 10vh;
 }
 
@@ -30,9 +29,10 @@
 
 .sidebar-footer {
 	display: flex;
-	width: 100%;
-	border-top: 1px solid #fff;
+	max-width: 100%;
 	height: 10vh;
+	justify-content: center;
+	align-items: center;
 }
 
 .sidebar-title {

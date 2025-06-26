@@ -1,7 +1,6 @@
 // src/components/CodeEditor.jsx
-
+// import Editor, { DiffEditor, useMonaco, loader } from '@monaco-editor/react';
 import Editor from "@monaco-editor/react";
-
 const defaultSnippets = {
   python: 'print("Hello World")',
   c: '#include <stdio.h>\nint main() {\n  printf("Hello World");\n  return 0;\n}',
@@ -14,9 +13,10 @@ export default function CodeEditor({ code, setCode, language }) {
   const handleEditorChange = (value) => setCode(value);
 
   return (
-    <div style={{ height: "400px", border: "1px solid #333", borderRadius: "8px" ,width:'50vw'}}>
+
+      
       <Editor
-        height="100%"
+        height="90vh"
         theme="vs-dark"
         language={language}
         value={code || defaultSnippets[language]}
@@ -26,7 +26,6 @@ export default function CodeEditor({ code, setCode, language }) {
           minimap: { enabled: false },
           automaticLayout: true,
         }}
-      />
-    </div>
+      /> 
   );
 }

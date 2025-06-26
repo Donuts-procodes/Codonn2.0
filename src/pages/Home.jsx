@@ -14,21 +14,21 @@ export default function Home() {
     <div className="home-body">
       <Sidebar />
       <div className="scroll-body">
-        <div onClick={() => handleCardClick("python")}>
-          <Card title="Popular this month" poweredBy="Powered by" source="Uiverse" />
-        </div>
-        <div onClick={() => handleCardClick("cpp")}>
-          <Card title="Top Picks" poweredBy="Curated by" source="Codonn" />
-        </div>
-        <div onClick={() => handleCardClick("java")}>
-          <Card title="Editor's Choice" poweredBy="Selected by" source="OpenAI" />
-        </div>
-        <div onClick={() => handleCardClick("javascript")}>
-          <Card title="Try JavaScript" poweredBy="Run in" source="Browser" />
-        </div>
-        <div onClick={() => handleCardClick("c")}>
-          <Card title="Run C code" poweredBy="Compiled with" source="GCC" />
-        </div>
+        <span onClick={() => handleCardClick("python")}>
+          <Card title="Python" poweredBy="version:"  />
+        </span>
+        <span onClick={() => handleCardClick("cpp")}>
+          <Card title="C++" poweredBy="version:"  />
+        </span>
+        <span onClick={() => handleCardClick("java")}>
+          <Card title="Java" poweredBy="version"  />
+        </span>
+        <span onClick={() => handleCardClick("javascript")}>
+          <Card title="JavaScript" poweredBy="verison"  />
+        </span>
+        <span onClick={() => handleCardClick("c")}>
+          <Card title="C" poweredBy="verison"  />
+        </span>
       </div>
     </div>
   );

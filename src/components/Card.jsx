@@ -1,11 +1,11 @@
 import './Card.css';
 
-export default function Card({ title, poweredBy, source }) {
+export default function Card({ title, poweredBy }) {
   return (
     <div className="card">
       <p className="heading">{title}</p>
       <p>{poweredBy}</p>
-      <p>{source}</p>
     </div>
   );
 }
+//NOTE: connected to the homepage

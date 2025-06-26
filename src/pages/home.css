@@ -12,4 +12,14 @@
 	align-items: center;
 	flex-wrap: wrap;
 	margin-left: 15vw;
+	flex-flow: wrap;
+	max-height: 100vh;
+	width: max-content;
+	gap: 5rem;
+	position: relative;
+}
+.scroll-body>span{
+	display: flex;
+	width: 20%;
+	cursor: pointer;
 }
